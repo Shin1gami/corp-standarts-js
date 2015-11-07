@@ -118,7 +118,7 @@ var arrayOneBig = [
     'is',
     'github',
     'readme',
-    'file
+    'file'
 ];
 var arrayTwo = {
     good: 'code',
@@ -132,7 +132,7 @@ var arrayTwo = {
 var a = [
   'hello', 'world'
 ];
-var ab = ['hello','world','this','is','github','readme','file];
+var ab = ['hello','world','this','is','github','readme','file'];
 var b = {"good": 'code'
         , is generally: 'pretty'
         };
