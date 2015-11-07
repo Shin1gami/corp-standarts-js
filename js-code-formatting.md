@@ -14,6 +14,7 @@
 * [Оформление массивов и объектов](#Оформление-массивов-и-объектов)
 * [Операторы сравнения](#Операторы-сравнения)
 * [Использование описательных условий](#Использование-описательных-условий)
+* [Цепочка методов](#Цепочка-методов)
 
 ### 4 пробельных символа для отступов
 **Резрешено:** Использовать только 4 пробельных символа для оступов.
@@ -196,3 +197,46 @@ if (password.length >= 4 && /^(?=.*\d).{4,}$/.test(password)) {
     console.log('losing');
 }
 ```
+
+### Цепочка методов
+Если небоходимо использовать цепочные методы, то каждый из них должен быть:
+* один метод но строке
+* отбить слева 4 пробельными отступами, чтобы можно были легко визуально опрделить данный тип методов
+
+*Разрешено:*
+
+```js
+User
+    .findOne({ name: 'foo' })
+    .populate('bar')
+    .exec(function(err, user) {
+        return true;
+    });
+````
+
+*Запрещено:*
+
+```js
+User
+.findOne({ name: 'foo' })
+.populate('bar')
+.exec(function(err, user) {
+  return true;
+});
+
+User.findOne({ name: 'foo' })
+  .populate('bar')
+  .exec(function(err, user) {
+    return true;
+  });
+
+User.findOne({ name: 'foo' }).populate('bar')
+.exec(function(err, user) {
+  return true;
+});
+
+User.findOne({ name: 'foo' }).populate('bar')
+  .exec(function(err, user) {
+    return true;
+  });
+````
