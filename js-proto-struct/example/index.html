@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <a href="#" class="js-span-click">click me</a>
+        <a href="#" class="js-span-click-2">show version</a>
+        
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="../lib/inheritance.js"></script>
+        <script src="../lib/BaseModule.js"></script>
+        <script src="./FooModule.js"></script>
+        
+        <script>
+        $(function() {
+            new Foo().init();
+        });
+        </script>
+    </body>
+</html>
