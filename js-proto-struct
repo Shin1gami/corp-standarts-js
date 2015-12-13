@@ -1,0 +1,26 @@
+class MODULE {
+  get version() {
+    return '1.0.0';
+  }
+}
+
+class Foo extends MODULE {
+  getFromInstance() {
+    console.info('1>>',this.version);
+  }
+  
+  getFromProto() {
+    console.info('2>>',Foo.prototype.version);
+  }
+  
+  getFromAnotherScope() {
+    setTimeout(this.onTimeoutHandler);
+  }
+  
+  onTimeoutHandler() {
+    console.info('3>>', Foo.prototype.version);
+  }
+}
+
+var f= new Foo;
+console.log(f.getFromInstance(), f.getFromProto(), f.getFromAnotherScope());
